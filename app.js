@@ -1,6 +1,9 @@
+
 const express = require('express');
 const bodyParser = require('body-parser');
+
 const mongoose = require('mongoose')
+mongoose.set('strictQuery', false);
 const{getVehicle,addVehicle,deleteVehicle,updateVehicle,loggerFunction,getVehicleById, checkAdmin} = require('./controller/vehicle');
 mongoose.connect('mongodb://localhost:27017/vehicle-details',
     {
