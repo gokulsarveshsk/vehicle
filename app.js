@@ -5,12 +5,12 @@ const bodyParser = require('body-parser');
 const mongoose = require('mongoose')
 mongoose.set('strictQuery', false);
 const{getVehicle,addVehicle,deleteVehicle,updateVehicle,loggerFunction,getVehicleById, checkAdmin} = require('./controller/vehicle');
-// mongoose.connect('mongodb://localhost:27017/vehicle-details',
-//     {
-//     useNewUrlParser: true
-//     }
-// );
-mongoose.connect(process.env.MONGO_URL);
+mongoose.connect('mongodb://localhost:27017/vehicle-details',
+    {
+    useNewUrlParser: true
+    }
+);
+// mongoose.connect(process.env.MONGO_URL);
 
 const db = mongoose.connection;
 db.on("error",console.error.bind(console,"connection error:"));
