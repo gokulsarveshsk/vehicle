@@ -1,11 +1,12 @@
-
+const dotenv = require("dotenv");
+dotenv.config();
 const express = require('express');
 const bodyParser = require('body-parser');
 
 const mongoose = require('mongoose')
 mongoose.set('strictQuery', true);
 const{getVehicle,addVehicle,deleteVehicle,updateVehicle,loggerFunction,getVehicleById, checkAdmin} = require('./controller/vehicle');
-mongoose.connect('mongodb://localhost:27017/vehicle-details',
+mongoose.connect(`mongodb+srv://${process.env.DB_USERNAME}:${process.env.DB_PASSWORD}@cluster1.messkzq.mongodb.net/?retryWrites=true&w=majority`,
     {
     useNewUrlParser: true
     }

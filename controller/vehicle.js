@@ -55,7 +55,7 @@ exports.addVehicle = async (req,res,next) => {
         }else{
             return res.status(500).json({
                 success:false,
-                error:'Server Error'
+                error:'Server Error add'
             });
         }
     }

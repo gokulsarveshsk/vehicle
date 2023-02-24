@@ -5,3 +5,4 @@ api/*
 .idea/*
 images/*
 !images/.gitkeep
+.env
