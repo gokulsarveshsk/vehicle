@@ -1,7 +1,7 @@
 const dotenv = require("dotenv");
 dotenv.config();
 const express = require('express');
-const cros = require('cors');
+const cors = require('cors');
 const bodyParser = require('body-parser');
 
 const mongoose = require('mongoose')
@@ -21,7 +21,10 @@ console.log("Database connected");
 });
 
 const app = express();
-app.use(cros());
+app.use(cors({
+    origin: 'https://vehicle-9tfu.onrender.com/api/v1/vehicle'
+}   
+));
 app.use(bodyParser.urlencoded({ extended: true }));
 app.use(bodyParser.json());
 app.use(loggerFunction);
@@ -41,6 +44,6 @@ app.delete('/api/v1/vehicle/:id',deleteVehicle);
 app.put('/api/v1/vehicle/:id',updateVehicle);
 
 
-app.listen(3000, () => {
-    console.log('Server is running on port 3000');
+app.listen(3900, () => {
+    console.log('Server is running on port 3900');
   });
