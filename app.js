@@ -22,7 +22,7 @@ console.log("Database connected");
 
 const app = express();
 app.use(cors({
-    origin: 'https://vehicle-9tfu.onrender.com/api/v1/vehicle'
+    origin: '*'
 }   
 ));
 app.use(bodyParser.urlencoded({ extended: true }));
