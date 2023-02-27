@@ -1,6 +1,7 @@
 const dotenv = require("dotenv");
 dotenv.config();
 const express = require('express');
+const cros = require('cors');
 const bodyParser = require('body-parser');
 
 const mongoose = require('mongoose')
@@ -20,6 +21,7 @@ console.log("Database connected");
 });
 
 const app = express();
+app.use(cros());
 app.use(bodyParser.urlencoded({ extended: true }));
 app.use(bodyParser.json());
 app.use(loggerFunction);
